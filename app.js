@@ -1,6 +1,6 @@
 // REPLACE THIS WITH YOUR ACTUAL CLOUDFLARE WORKER URL
 // Example: "https://my-worker.my-name.workers.dev"
-const WORKER_URL = "YOUR_WORKER_URL_HERE";
+const WORKER_URL = "https://kevingen.itskevin.workers.dev";
 
 async function generateEmail() {
     const prefixInput = document.getElementById("prefix").value.trim().toLowerCase();
