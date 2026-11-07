@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp Mail Generator</title>
+    <style>
+        * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+        body { background: #0f172a; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; color: #fff; }
+        .container { background: #1e293b; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); width: 100%; max-width: 450px; border: 1px solid #334155; }
+        h1 { margin-top: 0; font-size: 1.5rem; text-align: center; color: #f8fafc; margin-bottom: 1.5rem; }
+        .input-group { display: flex; margin-bottom: 1rem; }
+        input { flex: 1; padding: 0.75rem; border: 1px solid #475569; background: #0f172a; color: #fff; border-radius: 6px 0 0 6px; outline: none; font-size: 1rem; }
+        input:focus { border-color: #3b82f6; }
+        .domain { background: #334155; padding: 0.75rem; border: 1px solid #475569; border-left: none; border-radius: 0 6px 6px 0; color: #cbd5e1; font-size: 0.9rem; display: flex; align-items: center; }
+        button { width: 100%; padding: 0.75rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+        button:hover { background: #2563eb; }
+        button:disabled { background: #64748b; cursor: not-allowed; }
+        .result { margin-top: 1.5rem; padding: 1rem; background: #064e3b; border: 1px solid #059669; border-radius: 6px; display: none; text-align: center; }
+        .result.error { background: #7f1d1d; border-color: #ef4444; color: #fca5a5; }
+        .email-text { font-weight: bold; font-size: 1.1rem; margin: 0.5rem 0; color: #34d399; word-break: break-all; }
+        .copy-btn { margin-top: 1rem; background: #10b981; }
+        .copy-btn:hover { background: #059669; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Temp Email</h1>
+        <div class="input-group">
+            <input type="text" id="prefix" placeholder="Enter name (e.g., netflix)" autocomplete="off">
+            <div class="domain">@kevingen.dpdns.org</div>
+        </div>
+        <button id="generateBtn" onclick="generateEmail()">Generate Email</button>
+
+        <div id="result" class="result">
+            <p id="message" style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">Email created and forwarding to your inbox!</p>
+            <div id="emailText" class="email-text"></div>
+            <button class="copy-btn" onclick="copyEmail()">Copy to Clipboard</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
